@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import { useAmount } from "../Hooks/amount";
+import { useRecoilValue } from "recoil";
+import { UserDetails } from "../../Atoms/atoms";
 
 
 
@@ -12,7 +14,9 @@ export default function DashBoard() {
     const navigate = useNavigate();
     const [userDetails, setUserDetails] = useState([]);
     const [filterItem, setFilter] = useState("");
-    const amount = useAmount()
+    const amount = useAmount();
+    const user = useRecoilValue(UserDetails);
+    
 
     useEffect(() => {
         axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filterItem, {
@@ -35,9 +39,9 @@ export default function DashBoard() {
         <div className="flex justify-between items-center px-8 py-5 shadow-md font-bold">
             <div className="text-2xl">Payments App</div>
             <div className="flex items-center space-x-4 pt-6">
-                <h3 className="text-xl font-semibold">Hello,User</h3>
+                <h3 className="text-xl font-semibold">Hello,{user.firstName}</h3>
                 <div className="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center">
-                    <span className="text-xl text-white">U</span>
+                    <span className="text-xl text-white">{user.firstName[0]}</span>
                 </div>
             </div>
         </div>

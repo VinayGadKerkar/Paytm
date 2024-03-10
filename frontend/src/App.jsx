@@ -4,6 +4,7 @@ import { Suspense } from 'react'
 import SignUp from './Routes/SignUp'
 import DashBoard from './Routes/DashBoard'
 import Transfer from './Routes/MoneyTransfer'
+import { RecoilRoot } from 'recoil'
 
 
 
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div>
+      <RecoilRoot>
       <BrowserRouter>
         <Routes>
           <Route path="/signin" element={<Suspense fallback="Loading"><SignIn></SignIn></Suspense>}></Route>
@@ -19,6 +21,8 @@ function App() {
           <Route path="/transfer" element={<Suspense fallback="Loading"><Transfer></Transfer></Suspense>}></Route>
         </Routes>
       </BrowserRouter>
+
+      </RecoilRoot>
     </div>
   )
 }

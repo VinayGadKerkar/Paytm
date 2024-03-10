@@ -145,4 +145,18 @@ userRouter.get('/bulk', authMiddleware, async function (req, res) {
         })
     }
 })
+
+userRouter.get("/details" , authMiddleware , async (req , res) =>{
+       const id = req.userId;
+       const user = await User.findOne({
+           _id:id 
+       });
+       if(!user){
+        return res.status(411).json({
+            message: "No results found!"
+        })
+       }
+       res.status(200).json(user);
+       
+})
 module.exports = userRouter;
