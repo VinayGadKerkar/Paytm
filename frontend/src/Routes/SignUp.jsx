@@ -16,25 +16,25 @@ export default function SignUp() {
                 <p className="p-2 text-base text-gray-500 text-sm">Enter your information to create an account</p>
                 <div className=" w-full">
                     <div className="py-2">  First Name</div>
-                    <input type="text" placeholder="mukesh" className="border border-gray-200 border-2 w-full p-2 " onChange={(e) => {
+                    <input type="text" placeholder="jhon" className="border border-gray-200 border-2 w-full p-2 " onChange={(e) => {
                         setFirstName(e.target.value);
                     }} />
                 </div>
                 <div className=" w-full">
                     <div className="py-2">Last Name</div>
-                    <input type="text" placeholder="ambani" className="border border-gray-200 border-2 w-full p-2 " onChange={(e) => {
+                    <input type="text" placeholder="doe" className="border border-gray-200 border-2 w-full p-2 " onChange={(e) => {
                         setLastName(e.target.value);
                     }} />
                 </div>
                 <div className=" w-full">
                     <div className="py-2">Email</div>
-                    <input type="text" placeholder="mukeshambani@paisa.com" className="border border-gray-200 border-2 w-full p-2 " onChange={(e) => {
+                    <input type="text" placeholder="jhondoe@gmail.com" className="border border-gray-200 border-2 w-full p-2 " onChange={(e) => {
                         setUsername(e.target.value);
                     }} />
                 </div>
                 <div className=" w-full">
                     <div className="py-2">Password</div>
-                    <input type="text" placeholder="" className="border border-gray-200 border-2 w-full p-2 " onChange={(e) => {
+                    <input type="password" placeholder="" className="border border-gray-200 border-2 w-full p-2 " onChange={(e) => {
                         setPassword(e.target.value);
                     }} />
                 </div>
